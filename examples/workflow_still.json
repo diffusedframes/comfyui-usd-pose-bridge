@@ -1,0 +1,305 @@
+{
+  "last_node_id": 6,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "USDPBLoadStage",
+      "pos": [
+        60,
+        190
+      ],
+      "size": [
+        350,
+        115
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "stage",
+          "type": "USD_STAGE",
+          "links": [
+            1,
+            2
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "stage_info",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "USDPBLoadStage"
+      },
+      "widgets_values": [
+        "examples/demo.usda"
+      ],
+      "title": "Load the included USD demo"
+    },
+    {
+      "id": 2,
+      "type": "USDPBProjectPose",
+      "pos": [
+        470,
+        65
+      ],
+      "size": [
+        390,
+        535
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "stage",
+          "type": "USD_STAGE",
+          "link": 1
+        },
+        {
+          "name": "joint_map",
+          "type": "USD_JOINT_MAP",
+          "link": 5,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pose_images",
+          "type": "IMAGE",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "pose_keypoint",
+          "type": "POSE_KEYPOINT",
+          "links": [
+            4
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "mapping_report",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "USDPBProjectPose"
+      },
+      "widgets_values": [
+        "/World/Camera",
+        "*",
+        1.0,
+        1,
+        1.0,
+        1024,
+        768,
+        "BODY_25",
+        "fit",
+        "normalized",
+        4,
+        true,
+        true
+      ],
+      "title": "Project two characters: 1 frame"
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        940,
+        65
+      ],
+      "size": [
+        600,
+        480
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "title": "OpenPose preview"
+    },
+    {
+      "id": 4,
+      "type": "USDPBInspectStage",
+      "pos": [
+        60,
+        375
+      ],
+      "size": [
+        350,
+        270
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "stage",
+          "type": "USD_STAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "scene_info",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "USDPBInspectStage"
+      },
+      "widgets_values": [],
+      "title": "Inspect cameras, skeletons and animation"
+    },
+    {
+      "id": 5,
+      "type": "USDPBSavePose",
+      "pos": [
+        940,
+        600
+      ],
+      "size": [
+        390,
+        150
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pose_keypoint",
+          "type": "POSE_KEYPOINT",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "saved_paths",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "USDPBSavePose"
+      },
+      "widgets_values": [
+        "usd_pose/demo_still",
+        "sequence"
+      ],
+      "title": "Save portable OpenPose JSON"
+    },
+    {
+      "id": 6,
+      "type": "USDPBJointMap",
+      "pos": [
+        60,
+        710
+      ],
+      "size": [
+        350,
+        250
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "joint_map",
+          "type": "USD_JOINT_MAP",
+          "links": [
+            5
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "USDPBJointMap"
+      },
+      "widgets_values": [
+        "{\n  \"face\": [\n    \"face_00\",\n    \"face_01\",\n    \"face_02\",\n    \"face_03\",\n    \"face_04\",\n    \"face_05\",\n    \"face_06\",\n    \"face_07\",\n    \"face_08\",\n    \"face_09\",\n    \"face_10\",\n    \"face_11\",\n    \"face_12\",\n    \"face_13\",\n    \"face_14\",\n    \"face_15\",\n    \"face_16\",\n    \"face_17\",\n    \"face_18\",\n    \"face_19\",\n    \"face_20\",\n    \"face_21\",\n    \"face_22\",\n    \"face_23\",\n    \"face_24\",\n    \"face_25\",\n    \"face_26\",\n    \"face_27\",\n    \"face_28\",\n    \"face_29\",\n    \"face_30\",\n    \"face_31\",\n    \"face_32\",\n    \"face_33\",\n    \"face_34\",\n    \"face_35\",\n    \"face_36\",\n    \"face_37\",\n    \"face_38\",\n    \"face_39\",\n    \"face_40\",\n    \"face_41\",\n    \"face_42\",\n    \"face_43\",\n    \"face_44\",\n    \"face_45\",\n    \"face_46\",\n    \"face_47\",\n    \"face_48\",\n    \"face_49\",\n    \"face_50\",\n    \"face_51\",\n    \"face_52\",\n    \"face_53\",\n    \"face_54\",\n    \"face_55\",\n    \"face_56\",\n    \"face_57\",\n    \"face_58\",\n    \"face_59\",\n    \"face_60\",\n    \"face_61\",\n    \"face_62\",\n    \"face_63\",\n    \"face_64\",\n    \"face_65\",\n    \"face_66\",\n    \"face_67\",\n    \"face_68\",\n    \"face_69\"\n  ]\n}"
+      ],
+      "title": "Add the demo facial landmarks"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "USD_STAGE"
+    ],
+    [
+      2,
+      1,
+      0,
+      4,
+      0,
+      "USD_STAGE"
+    ],
+    [
+      3,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      2,
+      1,
+      5,
+      0,
+      "POSE_KEYPOINT"
+    ],
+    [
+      5,
+      6,
+      0,
+      2,
+      1,
+      "USD_JOINT_MAP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        50,
+        40
+      ]
+    }
+  },
+  "version": 0.4
+}

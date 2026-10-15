@@ -1,0 +1,14 @@
+# Development files are not needed in a Comfy Registry package.
+.git/
+.github/
+.venv/
+.pytest_cache/
+.ruff_cache/
+**/__pycache__/
+**/*.py[cod]
+*.egg-info/
+build/
+dist/
+output/
+tests/
+tools/

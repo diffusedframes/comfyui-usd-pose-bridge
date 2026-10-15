@@ -1,0 +1,61 @@
+name: Publish to Comfy Registry
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to publish, for example v0.1.0
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    outputs:
+      revision: ${{ steps.revision.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: refs/tags/${{ inputs.tag }}
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Check publishing metadata and version
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: python tools/check_release.py --registry --tag "$RELEASE_TAG"
+      - name: Check publishing key is configured
+        env:
+          REGISTRY_ACCESS_TOKEN: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+        run: |
+          if [[ -z "$REGISTRY_ACCESS_TOKEN" ]]; then
+            echo "Add the REGISTRY_ACCESS_TOKEN repository secret before publishing."
+            exit 1
+          fi
+      - name: Remember validated commit
+        id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  tests:
+    needs: validate
+    uses: ./.github/workflows/tests.yml
+    with:
+      ref: ${{ needs.validate.outputs.revision }}
+
+  publish:
+    needs: [validate, tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.validate.outputs.revision }}
+          persist-credentials: false
+      - name: Publish validated version
+        uses: Comfy-Org/publish-node-action@d2366e7abb6ab16f3bb03e3520ae25c8cf749bc9
+        with:
+          skip_checkout: "true"
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}

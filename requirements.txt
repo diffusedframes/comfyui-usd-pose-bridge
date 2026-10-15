@@ -1,0 +1,4 @@
+# Install with the Python interpreter used by ComfyUI. Torch is supplied by ComfyUI.
+usd-core>=25.5,<27
+numpy>=1.24
+Pillow>=10.0

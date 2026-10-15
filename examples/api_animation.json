@@ -1,0 +1,80 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "USDPBLoadStage",
+      "inputs": {
+        "stage_path": "examples/demo.usda"
+      },
+      "_meta": {
+        "title": "Load the included USD demo"
+      }
+    },
+    "2": {
+      "class_type": "USDPBProjectPose",
+      "inputs": {
+        "camera_path": "/World/Camera",
+        "skeleton_paths": "*",
+        "start_frame": 1.0,
+        "frame_count": 24,
+        "frame_step": 1.0,
+        "width": 1024,
+        "height": 768,
+        "pose_format": "BODY_25",
+        "camera_fit": "fit",
+        "coordinate_space": "normalized",
+        "stick_width": 4,
+        "draw_hands": true,
+        "draw_face": true,
+        "stage": [
+          "1",
+          0
+        ],
+        "joint_map": [
+          "6",
+          0
+        ]
+      },
+      "_meta": {
+        "title": "Project 24 frames"
+      }
+    },
+    "3": {
+      "class_type": "PreviewImage",
+      "inputs": {
+        "images": [
+          "2",
+          0
+        ]
+      }
+    },
+    "4": {
+      "class_type": "USDPBInspectStage",
+      "inputs": {
+        "stage": [
+          "1",
+          0
+        ]
+      }
+    },
+    "5": {
+      "class_type": "USDPBSavePose",
+      "inputs": {
+        "pose_keypoint": [
+          "2",
+          1
+        ],
+        "filename_prefix": "usd_pose/demo_animation",
+        "format": "sequence"
+      }
+    },
+    "6": {
+      "class_type": "USDPBJointMap",
+      "inputs": {
+        "mapping_json": "{\n  \"face\": [\n    \"face_00\",\n    \"face_01\",\n    \"face_02\",\n    \"face_03\",\n    \"face_04\",\n    \"face_05\",\n    \"face_06\",\n    \"face_07\",\n    \"face_08\",\n    \"face_09\",\n    \"face_10\",\n    \"face_11\",\n    \"face_12\",\n    \"face_13\",\n    \"face_14\",\n    \"face_15\",\n    \"face_16\",\n    \"face_17\",\n    \"face_18\",\n    \"face_19\",\n    \"face_20\",\n    \"face_21\",\n    \"face_22\",\n    \"face_23\",\n    \"face_24\",\n    \"face_25\",\n    \"face_26\",\n    \"face_27\",\n    \"face_28\",\n    \"face_29\",\n    \"face_30\",\n    \"face_31\",\n    \"face_32\",\n    \"face_33\",\n    \"face_34\",\n    \"face_35\",\n    \"face_36\",\n    \"face_37\",\n    \"face_38\",\n    \"face_39\",\n    \"face_40\",\n    \"face_41\",\n    \"face_42\",\n    \"face_43\",\n    \"face_44\",\n    \"face_45\",\n    \"face_46\",\n    \"face_47\",\n    \"face_48\",\n    \"face_49\",\n    \"face_50\",\n    \"face_51\",\n    \"face_52\",\n    \"face_53\",\n    \"face_54\",\n    \"face_55\",\n    \"face_56\",\n    \"face_57\",\n    \"face_58\",\n    \"face_59\",\n    \"face_60\",\n    \"face_61\",\n    \"face_62\",\n    \"face_63\",\n    \"face_64\",\n    \"face_65\",\n    \"face_66\",\n    \"face_67\",\n    \"face_68\",\n    \"face_69\"\n  ]\n}"
+      },
+      "_meta": {
+        "title": "Add the demo facial landmarks"
+      }
+    }
+  }
+}
