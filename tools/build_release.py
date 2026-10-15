@@ -18,7 +18,7 @@ def build_release():
         raise ValueError("Cannot read the release version from pyproject.toml")
     version = version_match.group(1)
     files = [PACK_ROOT / name for name in (
-        "__init__.py", "README.md", "LICENSE", "pyproject.toml", "requirements.txt", ".comfyignore",
+        "__init__.py", "README.md", "LICENSE", "CHANGELOG.md", "pyproject.toml", "requirements.txt", ".comfyignore",
     )]
     for directory in ("usd_pose_bridge", "web", "docs", "examples"):
         files.extend(path for path in (PACK_ROOT / directory).rglob("*")

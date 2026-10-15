@@ -1,5 +1,7 @@
 # DiffusedFrames USD Pose Bridge
 
+[![Tests](https://github.com/diffusedframes/comfyui-usd-pose-bridge/actions/workflows/tests.yml/badge.svg)](https://github.com/diffusedframes/comfyui-usd-pose-bridge/actions/workflows/tests.yml)
+
 **A first custom node pack for turning OpenUSD skeleton animation into camera-matched OpenPose conditioning.**
 
 Load a USD scene, pick its camera, and generate pose images and editable keypoint data directly from the rig. No pose detector, model download, Blender, or GPU renderer is needed.

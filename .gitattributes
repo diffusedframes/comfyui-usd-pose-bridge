@@ -1,4 +1,4 @@
-* text=auto
+* text=auto eol=lf
 *.py text eol=lf
 *.js text eol=lf
 *.json text eol=lf
@@ -6,7 +6,7 @@
 *.yml text eol=lf
 *.md text eol=lf
 *.txt text eol=lf
-*.usda text eol=lf
+*.usda text eol=lf whitespace=-blank-at-eof
 *.png -text
 *.gif -text
 *.zip -text
