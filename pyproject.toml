@@ -28,9 +28,7 @@ test = ["pytest>=8", "torch>=2.2", "ruff>=0.11", "tomli>=2; python_version < '3.
 
 [tool.comfy]
 DisplayName = "DiffusedFrames USD Pose Bridge"
-# GitHub organization ownership does not reserve a Comfy Registry publisher ID.
-# Set this only after the publisher identity is registered and verified:
-# PublisherId = "diffusedframes"
+PublisherId = "diffusedframes"
 
 [tool.setuptools.packages.find]
 include = ["usd_pose_bridge*"]

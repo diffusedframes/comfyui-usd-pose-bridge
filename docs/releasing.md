@@ -35,15 +35,13 @@ Building a ZIP locally with `python tools/build_release.py` does not publish it.
 
 ## Enable ComfyUI Manager installation
 
-GitHub publication and Registry publication are separate steps. The repository is
-prepared for Registry publication, but the publisher identity must first exist on
-[Comfy Registry](https://registry.comfy.org/). Follow the official
-[publishing guide](https://docs.comfy.org/registry/publishing) to create the publisher
-and a publishing API key. Choose the publisher ID carefully because it is permanent.
+GitHub publication and Registry publication are separate steps. The `diffusedframes`
+publisher is registered on [Comfy Registry](https://registry.comfy.org/), and
+`[tool.comfy].PublisherId` is configured in this repository. Follow the official
+[publishing guide](https://docs.comfy.org/registry/publishing) to create a publishing
+API key for that publisher.
 
-1. Replace the commented `PublisherId` example in `[tool.comfy]` with the actual
-   publisher ID from the Registry. A GitHub organization name does not reserve it.
-   Confirm the intended package ID in `[project].name` before the first publication;
+1. Confirm the intended package ID in `[project].name` before the first publication;
    that identifier is also permanent after creation.
 2. Add the API key directly under the GitHub repository's **Settings → Secrets and
    variables → Actions → New repository secret**, named `REGISTRY_ACCESS_TOKEN`.
@@ -55,8 +53,8 @@ and a publishing API key. Choose the publisher ID carefully because it is perman
    tests the tagged commit on all four environments, and publishes that same commit.
 
 Registry publication is manual. Pushing a branch or changing `pyproject.toml`
-does not publish a package. Until the actual publisher ID and repository secret
-are configured, the publishing workflow stops with a clear setup message.
+does not publish a package. Until the repository secret is configured, the
+publishing workflow stops with a clear setup message.
 
 The publishing action is pinned to a reviewed commit from
 [Comfy-Org/publish-node-action](https://github.com/Comfy-Org/publish-node-action).
