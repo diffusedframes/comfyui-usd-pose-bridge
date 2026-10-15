@@ -2,8 +2,9 @@
 
 ## 0.1.0 — development preview
 
-Initial DiffusedFrames USD Pose Bridge implementation. Registry publication and
-an interactive ComfyUI Desktop installation test are pending.
+Initial DiffusedFrames USD Pose Bridge implementation. The still and 24-frame
+animation demos passed through a running ComfyUI Desktop 0.38.2 execution API on
+Windows. Broader rig and interactive interface testing is ongoing.
 
 - Seven ComfyUI nodes for USD loading, scene inspection, joint mapping, pose
   projection, rendering, and OpenPose JSON import/export.

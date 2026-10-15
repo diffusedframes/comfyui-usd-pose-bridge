@@ -1,8 +1,10 @@
 # Releasing DiffusedFrames USD Pose Bridge
 
 This pack is an early development preview. Automated tests exercise real USD,
-camera projection, pose files and image output. A live ComfyUI Desktop interface
-and installation test is still required before describing that integration as verified.
+camera projection, pose files and image output. The still and 24-frame animation
+demos also passed through a running ComfyUI Desktop 0.38.2 execution API on Windows.
+This verifies backend integration; broader rig and interactive interface testing
+is ongoing.
 
 ## Routine development
 

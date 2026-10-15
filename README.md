@@ -6,7 +6,7 @@
 
 Load a USD scene, pick its camera, and generate pose images and editable keypoint data directly from the rig. No pose detector, model download, Blender, or GPU renderer is needed.
 
-**Development preview · 0.1.0.** Backend integration tests and the bundled demo are available; an interactive ComfyUI Desktop installation check is still pending. Comfy Registry / Manager publication is pending, so install manually for now.
+**Development preview · 0.1.0.** The bundled still and 24-frame animation demos have passed through the execution API of a running ComfyUI Desktop 0.38.2 installation on Windows. Automated tests also cover Windows and Ubuntu with Python 3.10 and 3.12. Broader rig and interactive interface testing is ongoing.
 
 ![Pose output from the included animated USD scene](examples/demo_preview.png)
 
