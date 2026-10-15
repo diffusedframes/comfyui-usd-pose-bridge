@@ -8,7 +8,9 @@ Load a USD scene, pick its camera, and generate pose images and editable keypoin
 
 **Development preview · 0.1.0.** The bundled still and 24-frame animation demos have passed through the execution API of a running ComfyUI Desktop 0.38.2 installation on Windows. Automated tests also cover Windows and Ubuntu with Python 3.10 and 3.12. Broader rig and interactive interface testing is ongoing.
 
-![Pose output from the included animated USD scene](examples/demo_preview.png)
+![Two USD camera/frame studies: source character, projected OpenPose control, and actual AI composite](examples/showcase_comparison.jpg)
+
+The cinematic showcase uses an imported animated character, two authored USD cameras, and a photographed location. The pack supplies the pose controls; an optional SDXL workflow generates the astronaut and composites it into the original background. [Reproduce the showcase](examples/showcase/README.md).
 
 ## What is included
 
@@ -79,6 +81,12 @@ A separate USD SDK on `PYTHONPATH` can shadow the `usd-core` wheel, and incompat
 Drag `examples/workflow_still.json` into ComfyUI and run it. It loads `examples/demo.usda` from this pack, previews the pose, displays the scene report, and saves pose JSON under `ComfyUI/output/usd_pose/`.
 
 Use `examples/workflow_animation.json` for 24 consecutive frames. Each batch image and keypoint frame has the same index. API prompt versions are included beside the UI workflows.
+
+### Cinematic showcase (optional)
+
+Use `examples/workflow_showcase.json` or `examples/workflow_showcase_B.json` to turn the bundled real-asset USD animation into a character in a photographic background. Copy the showcase's `plate_*.png` and `mask_*.png` files into `ComfyUI/input/diffusedframes_showcase/`, then select an SDXL checkpoint and a matching SDXL OpenPose ControlNet in the workflow. See the [showcase guide](examples/showcase/README.md) for the exact models, assets, and settings.
+
+These are two still-image studies; independently generated frames do not establish temporal consistency for video. The additional image models are used only by this optional example. The basic USD-to-pose demos require no diffusion model or Blender.
 
 The basic connection is:
 

@@ -1,0 +1,26 @@
+{
+  "body": {
+    "neck": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_neck_joint_1",
+    "mid_hip": "Skeleton_torso_joint_1",
+    "left_shoulder": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_arm_joint_L__4_",
+    "left_elbow": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_arm_joint_L__4_/Skeleton_arm_joint_L__3_",
+    "left_wrist": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_arm_joint_L__4_/Skeleton_arm_joint_L__3_/Skeleton_arm_joint_L__2_",
+    "left_hip": "Skeleton_torso_joint_1/leg_joint_L_1",
+    "left_knee": "Skeleton_torso_joint_1/leg_joint_L_1/leg_joint_L_2",
+    "left_ankle": "Skeleton_torso_joint_1/leg_joint_L_1/leg_joint_L_2/leg_joint_L_3",
+    "right_shoulder": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_arm_joint_R",
+    "right_elbow": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_arm_joint_R/Skeleton_arm_joint_R__2_",
+    "right_wrist": "Skeleton_torso_joint_1/Skeleton_torso_joint_2/torso_joint_3/Skeleton_arm_joint_R/Skeleton_arm_joint_R__2_/Skeleton_arm_joint_R__3_",
+    "right_hip": "Skeleton_torso_joint_1/leg_joint_R_1",
+    "right_knee": "Skeleton_torso_joint_1/leg_joint_R_1/leg_joint_R_2",
+    "right_ankle": "Skeleton_torso_joint_1/leg_joint_R_1/leg_joint_R_2/leg_joint_R_3",
+    "nose": null,
+    "left_eye": null,
+    "right_eye": null,
+    "left_ear": null,
+    "right_ear": null
+  },
+  "left_hand": null,
+  "right_hand": null,
+  "face": null
+}
